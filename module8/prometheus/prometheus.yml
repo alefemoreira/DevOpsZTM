@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 15s # Intervalo padrão para coletar métricas
+
+scrape_configs:
+  - job_name: 'node-app'
+    static_configs:
+      # O alvo é o serviço 'node-app' na porta 8080, que é o nosso app Express.
+      # Usamos o nome do serviço definido no docker-compose.yml.
+      - targets: ['node-app:8080']
